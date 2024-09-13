@@ -1,0 +1,37 @@
+<mat-form-field class="search-input">
+  <input
+    type="text"
+    matInput
+    placeholder="Search by name"
+    [formControl]="searchControl"
+  />
+</mat-form-field>
+<div class="advanced-filters">
+  <div class="clear-advanced-filter" (click)="clearAdvancedFilter()">
+    clear advanced filter
+  </div>
+  <div class="advanced-filter" (click)="openAdvancedFilterDialog()">
+    advanced filter
+  </div>
+</div>
+
+<div *ngIf="groupedContacts$ | async as groupedContacts">
+  <div *ngFor="let group of getGroupKeys(groupedContacts)">
+    <h2 class="group">{{ group }}</h2>
+    <div
+      class="contact"
+      *ngFor="let contact of groupedContacts[group]"
+      (click)="onContactClick(contact)"
+    >
+      {{ contact.firstName }} {{ contact.lastName }}
+    </div>
+  </div>
+</div>
+
+<button
+  mat-raised-button
+  class="add-button"
+  (click)="openAddNewContactDialog()"
+>
+  Add new contact
+</button>

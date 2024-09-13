@@ -1,0 +1,26 @@
+<div class="left-side">
+  <app-contacts (onSelectedContact)="onSelectedContact($event)"></app-contacts>
+</div>
+<div class="right-side">
+  <div class="selected-contact" *ngIf="selectedContact">
+    <h2>{{ selectedContact.firstName }} {{ selectedContact.lastName }}</h2>
+    <div>{{ selectedContact.group }}</div>
+    <div class="buttons">
+      <button
+        mat-raised-button
+        class="edit-button"
+        style="margin-right: 48px"
+        (click)="editContact(selectedContact)"
+      >
+        Edit contact
+      </button>
+      <button
+        mat-raised-button
+        class="delete-button"
+        (click)="deleteContact(selectedContact)"
+      >
+        Delete contact
+      </button>
+    </div>
+  </div>
+</div>

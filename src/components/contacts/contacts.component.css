@@ -1,0 +1,37 @@
+:host {
+  display: block;
+  padding: 24px 48px;
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+}
+.group {
+  color: red;
+}
+.contact {
+  cursor: pointer;
+}
+.add-button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 24px;
+  background: #1e7e34 !important;
+  color: white !important;
+}
+.search-input {
+  width: 100%;
+}
+.advanced-filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .advanced-filter {
+    color: blue;
+    cursor: pointer;
+  }
+  .clear-advanced-filter {
+    color: red;
+    cursor: pointer;
+  }
+}
